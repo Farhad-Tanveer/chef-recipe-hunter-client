@@ -1,7 +1,20 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../../../../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="navbar bg-base-100  py-6 px-16">
       <div className="navbar-start">
@@ -51,9 +64,17 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end invisible lg:visible">
-        <Link to="/login">
-          <button className="btn text-white font-mono">Login</button>
-        </Link>
+        {user && <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>}
+
+        {user ? (
+          <button onClick={handleLogOut} variant="dark">
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">
+            <button variant="dark">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
