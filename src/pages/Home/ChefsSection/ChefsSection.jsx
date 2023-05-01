@@ -14,7 +14,7 @@ const ChefsSection = ({ chef }) => {
   return (
     <div className="mb-10">
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure className=" h-80">
+        <figure className="h-80">
           <img src={chef_picture} alt="name" />
         </figure>
         <div className="card-body">

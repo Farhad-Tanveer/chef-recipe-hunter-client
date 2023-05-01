@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import background_img from "../../../assets/images/bg2.jpeg";
 import Newsletter from "../../Newsletter/Newsletter";
+import PopularRecipes from "../../PopularRecipes/PopularRecipes";
 import ChefsSection from "../ChefsSection/ChefsSection";
 
 const Home = () => {
@@ -31,16 +32,26 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-3xl text-center mt-10 font-bold mb-5 leading-relaxed">
+      <h1 className="text-5xl text-center mt-10 font-bold mb-5 leading-relaxed">
         Our Beloved Chefs
       </h1>
-      <div className="grid grid-cols-2 w-1/2 mx-auto my-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:w-1/2  mx-auto lg:my-16">
         {chefsData.map((chef) => (
           <ChefsSection chef={chef} key={chef.id}></ChefsSection>
         ))}
       </div>
-      <div className="mb-20">
+      <div>
         <Newsletter></Newsletter>
+      </div>
+      <h1 className="text-5xl text-center mt-10 font-bold mb-5 leading-relaxed">
+        Most Popular Recipes
+      </h1>
+      <p className=" text-gray-500 text-center mb-16">
+        Excepteur sint occaecat cupidatat non qui proident, sunt culpa qui
+        officia deserunmollit anim id est laborum.
+      </p>
+      <div className="mb-20">
+        <PopularRecipes></PopularRecipes>
       </div>
     </div>
   );
