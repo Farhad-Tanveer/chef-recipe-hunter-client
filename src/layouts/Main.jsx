@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../pages/Home/Home/Shared/Footer/Footer";
 import Header from "../pages/Home/Home/Shared/Header/Header";
-import background_img from "../assets/images/bg.jpeg";
+import background_img from "../assets/images/bg2.jpeg";
 
 const Main = () => {
   return (
@@ -15,8 +15,8 @@ const Main = () => {
           {" "}
         </div>
         <Header></Header>
-        <Outlet></Outlet>
       </div>
+      <Outlet></Outlet>
       <Footer></Footer>
     </>
   );
