@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGithub, FaGofore } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname;
@@ -24,6 +26,22 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -70,6 +88,25 @@ const Login = () => {
               New to this site? Please Register
             </button>
           </Link>
+          <h4 className="mt-2 mb-2 text-center">Login With</h4>
+          <div className="form-control">
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline mb-3 mx-7 text-blue-400"
+              variant="outline-primary"
+            >
+              <FaGofore className="mr-2 " />
+              Login with Google
+            </button>
+            <button
+              onClick={handleGithubSignIn}
+              variant="outline-info"
+              className="btn btn-outline mx-7 mb-3"
+            >
+              <FaGithub className="mr-2" />
+              Login with Github
+            </button>
+          </div>
         </div>
       </div>
     </div>
