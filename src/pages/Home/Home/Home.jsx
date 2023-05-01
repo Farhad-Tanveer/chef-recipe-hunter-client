@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import background_img from "../../../assets/images/bg2.jpeg";
+import Newsletter from "../../Newsletter/Newsletter";
 import ChefsSection from "../ChefsSection/ChefsSection";
 
 const Home = () => {
@@ -37,6 +38,9 @@ const Home = () => {
         {chefsData.map((chef) => (
           <ChefsSection chef={chef} key={chef.id}></ChefsSection>
         ))}
+      </div>
+      <div className="mb-20">
+        <Newsletter></Newsletter>
       </div>
     </div>
   );
