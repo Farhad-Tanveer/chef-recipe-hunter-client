@@ -67,12 +67,18 @@ const Header = () => {
         {user && <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>}
 
         {user ? (
-          <button onClick={handleLogOut} variant="dark">
+          <button
+            onClick={handleLogOut}
+            className="btn btn-accent text-black"
+            variant="dark"
+          >
             Logout
           </button>
         ) : (
           <Link to="/login">
-            <button variant="dark">Login</button>
+            <button className="btn btn-accent text-black" variant="dark">
+              Login
+            </button>
           </Link>
         )}
       </div>

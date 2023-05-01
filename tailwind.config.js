@@ -7,7 +7,7 @@ export default {
         mytheme: {
           primary: "#221a93",
 
-          secondary: "#f9bdf4",
+          secondary: "#FBD0D9",
 
           accent: "#89b2f9",
 
@@ -21,7 +21,7 @@ export default {
 
           warning: "#D37817",
 
-          error: "#ED789F",
+          error: "#b91c1c",
         },
       },
     ],

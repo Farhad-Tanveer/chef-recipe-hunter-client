@@ -1,13 +1,16 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
     event.preventDefault();
+    setError("");
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -15,14 +18,18 @@ const Register = () => {
     const photo = form.photo.value;
     console.log(name, email, password, photo);
 
+    if (password.length < 6) {
+      setError("Please type atleast 6 character in your password");
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-        form.reset();
       })
       .catch((error) => {
         console.log(error);
+        setError(error);
       });
   };
 
@@ -97,6 +104,7 @@ const Register = () => {
               Already have an account? Sign in
             </button>
           </Link>
+          <p className=" text-error mx-3 my-3">{error}</p>
         </div>
       </div>
     </div>
