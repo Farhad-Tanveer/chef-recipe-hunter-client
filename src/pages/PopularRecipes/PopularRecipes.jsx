@@ -10,7 +10,11 @@ const PopularRecipes = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 w-fit mx-auto gap-5">
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
         <figure className=" h-64">
-          <img src={food1} alt="Shoes" />
+          <img
+            className=" cursor-pointer object-cover w-full aspect-square hover:scale-110 transition duration-300 ease-in-out"
+            src={food1}
+            alt="Shoes"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title"> Spring Rolls</h2>
@@ -21,7 +25,11 @@ const PopularRecipes = () => {
       </div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
         <figure className=" h-64">
-          <img src={food2} alt="Shoes" />
+          <img
+            className="cursor-pointer object-cover w-full aspect-square hover:scale-110 transition duration-300 ease-in-out"
+            src={food2}
+            alt="food"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Momo</h2>
@@ -32,7 +40,11 @@ const PopularRecipes = () => {
       </div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
         <figure className=" h-64">
-          <img src={food3} alt="Shoes" />
+          <img
+            className="cursor-pointer object-cover w-full aspect-square hover:scale-110 transition duration-300 ease-in-out"
+            src={food3}
+            alt="Shoes"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Chow Mein</h2>
@@ -43,7 +55,11 @@ const PopularRecipes = () => {
       </div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
         <figure className=" h-64">
-          <img src={food4} alt="Shoes" />
+          <img
+            className="cursor-pointer object-cover w-full aspect-square hover:scale-110 transition duration-300 ease-in-out"
+            src={food4}
+            alt="food"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Chinese Hot Pot</h2>

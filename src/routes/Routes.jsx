@@ -30,7 +30,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/recipes/${params.id}`),
+          fetch(
+            `https://chef-recipe-hunter-server-farhad-tanveer.vercel.app/recipes/${params.id}`
+          ),
       },
       {
         path: "/blog",

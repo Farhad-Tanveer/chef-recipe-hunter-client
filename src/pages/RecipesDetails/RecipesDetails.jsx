@@ -18,7 +18,11 @@ const RecipesDetails = ({ recipe }) => {
         <div>
           <div className="card lg:card-side bg-base-100">
             <figure className="w-full lg:w-64">
-              <img className="rounded-lg h-48" src={recipe_img} alt="Album" />
+              <img
+                className="rounded-lg h-48 cursor-pointer object-cover w-full aspect-square hover:scale-110 transition duration-300 ease-in-out"
+                src={recipe_img}
+                alt="Album"
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{recipe_name}</h2>

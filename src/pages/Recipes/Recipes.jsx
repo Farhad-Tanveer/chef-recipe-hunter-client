@@ -1,9 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import RecipesDetails from "../RecipesDetails/RecipesDetails";
 
 const Recipes = () => {
   const recipes = useLoaderData();
+  const [chefs, setChefs] = useState();
+  useEffect(() => {
+    fetch(
+      "https://chef-recipe-hunter-server-farhad-tanveer.vercel.app/chefsData"
+    );
+  }, []);
   return (
     <div>
       <h1 className="text-5xl text-center mt-10 font-bold mb-5 leading-relaxed">
