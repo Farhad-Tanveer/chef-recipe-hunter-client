@@ -35,7 +35,11 @@ const Home = () => {
       <h1 className="text-5xl text-center mt-10 font-bold mb-5 leading-relaxed">
         Our Beloved Chefs
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:w-1/2  mx-auto lg:my-16">
+      <p className=" text-gray-500 text-center mb-16">
+        With years of experience and a true passion for cooking, this talented
+        chef creates dishes that are both delicious and visually stunning.
+      </p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:w-3/4  mx-auto lg:my-16">
         {chefsData.map((chef) => (
           <ChefsSection chef={chef} key={chef.id}></ChefsSection>
         ))}
@@ -47,8 +51,8 @@ const Home = () => {
         Most Popular Recipes
       </h1>
       <p className=" text-gray-500 text-center mb-16">
-        Excepteur sint occaecat cupidatat non qui proident, sunt culpa qui
-        officia deserunmollit anim id est laborum.
+        With its mouthwatering aroma and satisfying taste, it's no surprise that
+        this recipe has become a beloved classic among foodies.
       </p>
       <div className="mb-20">
         <PopularRecipes></PopularRecipes>

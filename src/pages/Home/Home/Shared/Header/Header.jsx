@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="navbar bg-base-100  py-6 px-16">
+    <div className="navbar bg-base-100  py-6 lg:px-16">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -63,7 +63,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end invisible lg:visible">
+      <div className="navbar-end">
         {user && <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>}
 
         {user ? (
@@ -76,7 +76,7 @@ const Header = () => {
           </button>
         ) : (
           <Link to="/login">
-            <button className="btn btn-accent text-black" variant="dark">
+            <button className="btn text-white" variant="dark">
               Login
             </button>
           </Link>

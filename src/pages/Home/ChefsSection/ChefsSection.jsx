@@ -35,7 +35,7 @@ const ChefsSection = ({ chef }) => {
             </div>
           </div>
           <div className="card-actions flex justify-between">
-            <div className="flex justify-center items-center gap-2 bg-secondary border border-black rounded p-3">
+            <div className="flex justify-center items-center gap-2 border border-black rounded p-3">
               <FaHeart color="tomato"></FaHeart>Like
               <p>{likes}</p>
             </div>
