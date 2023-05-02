@@ -6,6 +6,7 @@ import { AuthContext } from "../../../../../providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -64,12 +65,19 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {user && <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>}
+        {user && (
+          <div className="tooltip tooltip-left" data-tip={user.displayName}>
+            <img
+              src={user.photoURL}
+              className="w-10 h-10 rounded-full border border-black "
+            ></img>
+          </div>
+        )}
 
         {user ? (
           <button
             onClick={handleLogOut}
-            className="btn btn-accent text-black"
+            className="btn btn-accent text-black ml-5"
             variant="dark"
           >
             Logout

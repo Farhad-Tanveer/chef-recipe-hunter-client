@@ -12,6 +12,7 @@ const ChefsSection = ({ chef }) => {
     chef_details,
     likes,
   } = chef;
+
   return (
     <div className="mb-10">
       <div className="card card-compact bg-base-100 shadow-xl">
@@ -41,7 +42,7 @@ const ChefsSection = ({ chef }) => {
               <p>{likes}</p>
             </div>
             <div>
-              <Link to={`/recipes/${id}`}>
+              <Link state={chef} to={`/recipes/${id}`}>
                 <button className="btn border border-black text-white">
                   View Recipes
                 </button>

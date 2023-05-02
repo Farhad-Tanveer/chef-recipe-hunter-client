@@ -6,9 +6,10 @@ import { FaGithub, FaGofore } from "react-icons/fa";
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
-  const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname;
+  const navigate = useNavigate();
+  console.log(location);
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -92,7 +93,7 @@ const Login = () => {
           <div className="form-control">
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-outline mb-3 mx-7 text-blue-400"
+              className="btn btn-outline mb-3 mx-7 "
               variant="outline-primary"
             >
               <FaGofore className="mr-2 " />

@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -25,7 +26,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        createdUser.photoURL = photo;
+        createdUser.displayName = name;
         console.log(createdUser);
+        navigate("/");
+        updateUser(name, photo)
+          .then(() => {
+            console.log("update user");
+          })
+          .catch((error) => console.log(error));
+        form.reset();
       })
       .catch((error) => {
         console.log(error);
