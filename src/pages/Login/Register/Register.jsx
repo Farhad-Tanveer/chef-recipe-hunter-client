@@ -28,7 +28,7 @@ const Register = () => {
         const createdUser = result.user;
         createdUser.photoURL = photo;
         createdUser.displayName = name;
-        console.log(createdUser);
+        // console.log(createdUser);
         navigate("/");
         updateUser(name, photo)
           .then(() => {

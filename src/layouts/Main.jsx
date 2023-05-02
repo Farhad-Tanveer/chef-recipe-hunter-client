@@ -10,7 +10,9 @@ const Main = () => {
       <div className="flex justify-center items-center">
         <Header></Header>
       </div>
-      <Outlet></Outlet>
+      <div className="min-h-100vh">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="grid grid-cols-2 w-3/4 mb-10 mx-auto gap-2 space-y-3">
+    <div className="grid grid-col-1 lg:grid-cols-2 w-3/4 mb-10 mx-auto gap-2 space-y-3">
       <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">

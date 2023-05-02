@@ -20,7 +20,7 @@ const Recipes = () => {
       <h1 className="text-5xl text-center mt-10 font-bold mb-5 leading-relaxed">
         Chef Recipes
       </h1>
-      <div className="flex flex-col lg:flex-row justify-between lg:w-3/5  mx-auto gap-28">
+      <div className="flex flex-col lg:flex-row justify-between lg:w-4/5  mx-auto gap-28">
         <div className="lg:w-1/2 flex items-center">
           <div className="card card-compact bg-base-100">
             <figure className="h-80">
