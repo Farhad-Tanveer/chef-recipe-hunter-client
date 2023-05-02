@@ -4,6 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 const ChefsSection = ({ chef }) => {
   const {
+    id,
     chef_picture,
     chef_name,
     years_of_experience,
@@ -13,7 +14,7 @@ const ChefsSection = ({ chef }) => {
   } = chef;
   return (
     <div className="mb-10">
-      <div className="card card-compact w-96 bg-base-100 shadow-xl">
+      <div className="card card-compact bg-base-100 shadow-xl">
         <figure className="h-80">
           <img src={chef_picture} alt="name" />
         </figure>
@@ -40,7 +41,7 @@ const ChefsSection = ({ chef }) => {
               <p>{likes}</p>
             </div>
             <div>
-              <Link>
+              <Link to={`/recipes/${id}`}>
                 <button className="btn border border-black text-white">
                   View Recipes
                 </button>

@@ -5,6 +5,7 @@ import Blog from "../pages/Home/Blog/Blog";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import Recipes from "../pages/Recipes/Recipes";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/chefsData"),
+        loader: () =>
+          fetch(
+            "https://chef-recipe-hunter-server-farhad-tanveer.vercel.app/chefsData"
+          ),
+      },
+      {
+        path: "/recipes/:id",
+        element: <Recipes></Recipes>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/recipes/${params.id}`),
       },
       {
         path: "/blog",

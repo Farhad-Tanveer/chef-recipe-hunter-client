@@ -39,7 +39,7 @@ const Home = () => {
         With years of experience and a true passion for cooking, this talented
         chef creates dishes that are both delicious and visually stunning.
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 lg:w-3/4  mx-auto lg:my-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:w-3/4 mx-auto lg:my-16">
         {chefsData.map((chef) => (
           <ChefsSection chef={chef} key={chef.id}></ChefsSection>
         ))}
