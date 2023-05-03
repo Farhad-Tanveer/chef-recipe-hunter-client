@@ -8,8 +8,10 @@ const Login = () => {
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+
   const from = location.state?.from?.pathname || "/";
+
+  const state = location.state?.from?.state || null;
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -22,7 +24,8 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        navigate(from, { state: state, replace: false });
       })
       .catch((error) => console.log(error));
   };

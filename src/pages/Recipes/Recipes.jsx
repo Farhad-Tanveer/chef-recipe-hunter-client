@@ -7,6 +7,10 @@ import LazyLoad from "react-lazy-load";
 const Recipes = () => {
   const recipes = useLoaderData();
   const location = useLocation();
+  if (!location.state) {
+    console.log(location);
+    return;
+  }
   const {
     chef_picture,
     chef_name,
