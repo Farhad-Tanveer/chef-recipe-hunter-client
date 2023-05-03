@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../../../../providers/AuthProvider";
 
@@ -57,10 +57,24 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-xl font-mono">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <NavLink
+              to="/blog"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Blog
+            </NavLink>
           </li>
         </ul>
       </div>

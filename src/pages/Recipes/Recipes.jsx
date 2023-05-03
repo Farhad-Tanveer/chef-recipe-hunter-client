@@ -28,7 +28,7 @@ const Recipes = () => {
         <div className="lg:w-1/2 flex items-center">
           <div className="card card-compact bg-base-100">
             <figure className="h-80">
-              <LazyLoad height={762}>
+              <LazyLoad height={762} offset={500} threshold={0.65}>
                 <img src={chef_picture} alt="name" />
               </LazyLoad>
             </figure>
