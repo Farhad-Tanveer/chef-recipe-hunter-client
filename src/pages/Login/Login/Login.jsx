@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGithub, FaGofore } from "react-icons/fa";
+import { useState } from "react";
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } =
@@ -18,16 +19,25 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         // navigate(from, { replace: true });
         navigate(from, { state: state, replace: false });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        if (errorCode === "auth/wrong-password") {
+          alert("Invalid email or password.");
+        } else {
+          alert(errorMessage);
+        }
+      });
   };
 
   const handleGoogleSignIn = () => {
